@@ -4,12 +4,26 @@
 <script src="dygraph-combined.js"></script>
 </head>
 <body>
-<div id="graphdiv" style="width:800px; height:400px;"></div>
+<div id="graphdiv" style="width:800px; height:400px;float:left;"></div>
+<div id="status" style="width:200px; font-size:0.8em; padding-top:5px;"></div>
 <script type="text/javascript">
   g = new Dygraph(
     document.getElementById("graphdiv"),
     "umntuition.csv",
-    {visibility: [true,false,false,false]
+    {
+    visibility: [true,false,false,false],
+    labelsDiv: document.getElementById('status'),
+                labelsSeparateLines: true,
+                legend: 'always',
+                colors: ["rgb(51,204,204)",
+                         "rgb(255,100,100)",
+                         "#00DD55",
+                         "rgba(50,50,200,0.4)"],
+                width: 640,
+                height: 480,
+                title: 'Universitu of Minnesota Tuition Rates (1960-2014)',
+                xlabel: 'Year',
+                ylabel: 'Cost Per Credit',
     }
     );
     
