@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>University of Minnesota Tuition Rates (1960-2014)</title>
+<script src="dygraph-combined.js"></script>
+</head>
+<body>
+<div id="graphdiv" style="width:800px; height:400px;"></div>
+<script type="text/javascript">
+  g = new Dygraph(
+    document.getElementById("graphdiv"),
+    "umntuition.csv",
+    {visibility: [true,false,false,false]
+    }
+    );
+    
+      function change(el) {
+        g.setVisibility(parseInt(el.id), el.checked);
+      }
+</script>
+
+    <p><b>Show Series:</b></p>
+    <p>
+      <input type=checkbox id="0" checked onClick="change(this)">
+      <label for="0">Undergraduate (Resident)</label><br/>
+      
+      <input type=checkbox id="1" onClick="change(this)">
+      <label for="1">Undergraduate (Non-Resident)</label><br/>
+      
+      <input type=checkbox id="2" onClick="change(this)">
+      <label for="2">Graduate (Resident)</label><br/>
+      
+      <input type=checkbox id="3" onClick="change(this)">
+      <label for="3">Graduate (Non-Resident)</label>
+    </p>
+    
+</body>
+</html>
