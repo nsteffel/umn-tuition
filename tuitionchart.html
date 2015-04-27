@@ -5,13 +5,13 @@
 </head>
 <body>
 <div id="graphdiv" style="width:800px; height:400px;float:left;"></div>
-<div id="status" style="width:200px; font-size:0.8em; padding-top:5px;"></div>
+<div id="status" style="width:600px; font-size:0.8em; padding-top:5px;"></div>
 <script type="text/javascript">
   g = new Dygraph(
     document.getElementById("graphdiv"),
     "umntuition.csv",
     {
-    visibility: [true,false,false,false],
+    visibility: [true,false,false,false,true,false,false,false],
     labelsDiv: document.getElementById('status'),
                 labelsSeparateLines: true,
                 legend: 'always',
@@ -23,7 +23,7 @@
                 height: 480,
                 title: 'University of Minnesota Tuition Rates (1960-2014)',
                 xlabel: 'Year',
-                ylabel: 'Cost Per Credit',
+                ylabel: 'Cost Per Year',
     }
     );
     
@@ -44,7 +44,19 @@
       <label for="2">Graduate (Resident)</label><br/>
       
       <input type=checkbox id="3" onClick="change(this)">
-      <label for="3">Graduate (Non-Resident)</label>
+      <label for="3">Graduate (Non-Resident)</label><br/>
+      
+      <input type=checkbox id="4" checked onClick="change(this)">
+      <label for="4">Undergraduate (Resident) Chained to Consumer Price Index</label><br/>
+      
+      <input type=checkbox id="5" onClick="change(this)">
+      <label for="5">Undergraduate (Non-Resident) Chained to Consumer Price Index</label><br/>
+      
+      <input type=checkbox id="6" onClick="change(this)">
+      <label for="6">Graduate (Resident) Chained to Consumer Price Index</label><br/>
+      
+      <input type=checkbox id="7" onClick="change(this)">
+      <label for="7">Graduate (Non-Resident) Chained to Consumer Price Index</label>
     </p>
     
     
